@@ -375,6 +375,7 @@
       </select>
       <textarea name="message" placeholder="Tell me about your project..."></textarea>
       <button type="submit">Send Message</button>
+      
     </form>
   </section>
 
@@ -389,6 +390,41 @@
       <a href="mailto:hello@soundwavestudios.com">✉️</a>
     </div>
   </footer>
+  <!-- Include Forminit SDK -->
+<script src="https://forminit.com/sdk/v1/forminit.js"></script>
 
+<!-- Your Form -->
+<form id="contact-form">
+  <input type="text" name="fi-sender-firstName" placeholder="First Name" required />
+  <input type="text" name="fi-sender-lastName" placeholder="Last Name" required />
+  <input type="email" name="fi-sender-email" placeholder="Email" required />
+  <textarea name="fi-text-message" placeholder="Message" required></textarea>
+  <button type="submit">Submit</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+  const forminit = new Forminit();
+  const FORM_ID = "du0zlb5k1ef";
+
+  document.getElementById("contact-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const { data, error } = await forminit.submit(FORM_ID, formData);
+
+    const result = document.getElementById("result");
+
+    if (error) {
+      result.textContent = error.message;
+      return;
+    }
+
+    result.textContent = "Message sent successfully!";
+    e.target.reset();
+  });
+</script>
+  
 </body>
 </html>
