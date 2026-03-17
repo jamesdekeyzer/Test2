@@ -370,7 +370,6 @@
   <!-- Contact -->
   <section id="contact">
     <h2>Get In Touch</h2>
-    <!-- Forminit Form -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -453,95 +452,7 @@
 </head>
 <body>
     <div class="form-container">
-        <h2>Contact Us</h2>
-        <form action="https://forminit.com/api/form/submit/du0zlb5k1ef" method="POST" id="contactForm">
-            <div class="form-group">
-                <label for="name">Name *</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone">
-            </div>
-            
-            <div class="form-group">
-                <label for="subject">Subject *</label>
-                <select id="subject" name="subject" required>
-                    <option value="">Please select a subject</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="support">Technical Support</option>
-                    <option value="billing">Billing Question</option>
-                    <option value="feature">Feature Request</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="message">Message *</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            
-            <button type="submit">Send Message</button>
-        </form>
-        
-        <div id="formMessage" class="form-message"></div>
-    </div>
-
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get the form element
-            const form = e.target;
-            const formMessage = document.getElementById('formMessage');
-            
-            // Create form data
-            const formData = new FormData(form);
-            
-            // Submit the form
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-                throw new Error('Network response was not ok.');
-            })
-            .then(data => {
-                // Show success message
-                formMessage.textContent = 'Your message has been sent successfully!';
-                formMessage.className = 'form-message success';
-                formMessage.style.display = 'block';
-                
-                // Reset the form
-                form.reset();
-                
-                // Hide the message after 5 seconds
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
-            })
-            .catch(error => {
-                // Show error message
-                formMessage.textContent = 'There was an error sending your message. Please try again.';
-                formMessage.className = 'form-message error';
-                formMessage.style.display = 'block';
-                
-                console.error('Form submission error:', error);
-            });
-        });
-    </script>
+        <h2>Contact Us</h<span class="ml-2" /><span class="inline-block w-3 h-3 rounded-full bg-neutral-a12 align-middle mb-[0.1rem]" />
 
   <!-- Footer -->
   <footer>
